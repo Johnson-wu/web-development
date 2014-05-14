@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>clear 避免元素被上面的浮动元素挡住</title>
+		<style type="text/css">
+			.float_div {
+				float:left;
+				max-width:700px;
+				text-align:center;
+				border:10px dashed blue;
+			}
+			
+			.float_div2 {
+				float:right;
+				max-width:700px;
+				text-align:center;
+				border:10px dashed blue;
+			}
+			
+			.div {
+				clear:both;
+				max-width:1500px;
+				text-align:center;
+				border:10px solid red;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="float_div">
+			<p>我是有浮动效果的div</p>
+		</div>
+		<br>
+		<div class="float_div2">
+			<p>我是有浮动效果的div2</p>
+		</div>
+		<br>
+		<div class="div">
+			<p>我是固定div</p>
+		</div>
+	</body>
+	
+</html>

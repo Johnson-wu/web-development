@@ -1,0 +1,335 @@
+/* margin是外边距，padding是内边距 */
+/* :before :after 为css的选择器，在被选择的元素后面插入内容content或者样式 */
+*, *:before, *:after{
+	margin:0;
+	padding:0;
+	/* box-sizing什么作用？
+		属性前的"-webkit-"及"-moz-"分别代表Chrome.Safari和Firefox不同的浏览器 */
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/* # 为id选择器 */
+#gal {
+	position:relative;
+	width:600px;
+	height:300px;
+	margin:0 auto;
+	/* top 属性规定元素的顶部边缘。该属性定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。与margin有何区别？ */
+	top:100px;
+	background:white;
+	-webkit-box-shadow:0px 0px 0px 10px white,
+             5px 5px 0px 10px rgba(0,0,0,0.1);
+	-moz-box-shadow:0px 0px 0px 10px white,
+             5px 5px 0px 10px rgba(0,0,0,0.1);
+	box-shadow:0px 0px 0px 10px white,
+             5px 5px 0px 10px rgba(0,0,0,0.1);
+	/* css3 的transform属性：translate3d(x,y,z)定义3d转换. 与rotate3d区别？ */
+	-webkit-transform:translate3d(0, 0, 0);
+	-moz-transform:   translate3d(0, 0, 0);
+	-ms-transform:    translate3d(0, 0, 0);
+	-o-transform:     translate3d(0, 0, 0);
+	transform:        translate3d(0, 0, 0);
+}
+
+#gal:after {
+	content:'';
+	position:absolute;
+	bottom:24px;
+	right:0;
+	left:0;
+	width:100%;
+	height:1px;
+	background:rgba(255,255,255,0.35);
+	z-index:3;
+}
+
+/* id 选择器和派生选择器 : 下面选择器将对id为gal的元素内的所有ul元素起作用 */
+#gal ul {
+	/* list-style-type: 定义列表的标记样式 */
+	list-style-type:none;
+	/* list-style-type:circle;
+	list-style-type:square;
+	list-style-type:upper-roman;
+	list-style-type:lower-alpha; */
+}
+
+/* 元素名[attribute] 为属性选择器：属性选择器在为不带有 class 或 id 的表单设置样式时特别有用，但是后面 "+ label"是什么用法？这是选择input之后的所有label元素 */
+input[type="radio"], input[type="radio"] + label {
+	position:absolute;
+	bottom:15px;
+	/* display 属性规定元素应该生成的框的类型。 */
+	display:block;
+	width:20px;
+	height:20px;
+	/* border-radius 属性是一个简写属性，用于设置四个 border-*-radius 属性。
+		该属性允许您为元素添加圆角边框！ */
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+	/* cursor 属性规定要显示的光标的类型（形状）。 */
+	cursor:pointer;
+}
+
+input[type="radio"] {
+	/* 设置元素的透明级别0~1，0为完全透明 */
+	opacity:0;
+	/* 设置元素的堆叠顺序，可为负值，值越大则该元素越显示在其他元素前面 */
+	z-index:9;
+}
+
+input[value="one"], input[value="one"] + label {left:20px;}
+input[value="two"], input[value="two"] + label {left:128px;}
+input[value="three"], input[value="three"] + label {left:236px;}
+input[value="four"], input[value="four"] + label {left:344px;}
+input[value="five"], input[value="five"] + label {left:452px;}
+input[value="six"], input[value="six"] + label {left:20px;}
+
+input[type="radio"] + label {
+  background:rgba(255,255,255,0.35);
+  z-index:7;
+  /* box-shadow属性：向元素添加一个或多个阴影 */
+  -webkit-box-shadow:0px 0px 0px 0px rgba(255,255,255,0.15);
+  -moz-box-shadow:0px 0px 0px 0px rgba(255,255,255,0.15);
+  box-shadow:0px 0px 0px 0px rgba(255,255,255,0.15);
+  /* transition属性：为元素添加过渡效果,后面为效果持续时间 */
+  -webkit-transition:all .3s;
+  -moz-transition:all .3s;
+  -o-transition:all .3s;
+  transition:all .3s;
+}
+
+/* *=表示class属性中包括“entypo-”的所有元素 */
+[class*="entypo-"]:before{
+	position:absolut;
+	font-family:'entypo', sans-serif;
+}
+
+/* transition在w3c上测试width有效果，但是color没能测出效果 */
+figure[class*="entypo-"]:before {
+	left:10px;
+	top:5px;
+	font-size:2rem;
+	color:rgba(255,255,255,0);
+	z-index:1;
+	-webkit-transition:color .1s;
+	-moz-transition:color .1s;
+}
+
+a[class*="entypo-"]:before  {
+	top:8px;
+	left:9px;
+	font-size:1.5rem;
+	color:white;
+}
+
+/* :hover选择器：可用于所有元素，选择鼠标浮动在上面的元素 */
+a:hover[class*="entypo-"]:before {
+	color:white;
+}
+
+figure, figure img, figcaption {
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+figure {
+	bottom:0;
+	left:0;
+	width:600px;
+	height:300px;
+	display:block;
+	/* overflow 属性规定当内容溢出元素框时发生的事情 */
+	overflow:hidden;
+}
+
+figure img {
+	bottom:0;
+	left:0;
+	display:block;
+	width:600px;
+	height:300px;
+	z-index:1;
+	-webkit-transform:translateX(600px);
+    -moz-transform:translateX(600px);
+    -ms-transform:translateX(600px);
+    -o-transform:translateX(600px);
+    transform:translateX(600px);
+    -webkit-transition:all .15s .15s, z-index 0s;
+    -moz-transition:all .15s .15s, z-index 0s;
+    -o-transition:all .15s .15s, z-index 0s;
+    transition:all .15s .15s, z-index 0s;
+}
+
+figcaption {
+	display:block;
+    width:270px;
+    height:300px;
+    padding-top:20px;
+    background-image:radial-gradient(rgba( 255,255,255,0.3), transparent);
+    background-size:600px 600px;
+    background-repeat:no-repeat;
+    background-position:-300px -150px;
+    text-align:center;
+    z-index:3;
+    -webkit-box-shadow:-5px 0px 20px rgba(0,0,0,0.1);
+    -moz-box-shadow:-5px 0px 20px rgba(0,0,0,0.1);
+    box-shadow:-5px 0px 20px rgba(0,0,0,0.1);
+    -webkit-transform:translateX(300px);
+    -moz-transform:translateX(300px);
+    -ms-transform:translateX(300px);
+    -o-transform:translateX(300px);
+    transform:translateX(300px);
+    -webkit-transition:all .35s;
+    -moz-transition:all .35s;
+    -o-transition:all .35s;
+    transition:all .35s;
+}
+
+h4 {
+  display:inline-block;
+  padding:0 15px;
+  color:white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight:300;
+  font-size:2rem;
+}
+figcaption nav ul {display:block;padding-top:10px;}
+
+figcaption nav ul li {display:inline-block;margin-left:5px;}
+
+figcaption nav ul li a {
+  position:relative;
+  display:block;
+  width:40px;
+  height:40px;
+  background:rgba(255,255,255,0.2);
+  text-decoration:none;
+  color:white;
+  -webkit-border-radius:50%;
+  -moz-border-radius:50%;
+  border-radius:50%;
+  -webkit-box-shadow:inset 0px 0px 0px 0px rgba(255,255,255,0);
+  -moz-box-shadow:inset 0px 0px 0px 0px rgba(255,255,255,0);
+  box-shadow:inset 0px 0px 0px 0px rgba(255,255,255,0);
+  -webkit-transition:all .15s;
+  -moz-transition:all .15s;
+  -o-transition:all .15s;
+  transition:all .15s;
+}
+
+figcaption nav ul li a:hover {
+  background:rgba(255,255,255,0);
+  -webkit-box-shadow:inset 0px 0px 0px 2px rgba(255,255,255,1);
+  -moz-box-shadow:inset 0px 0px 0px 2px rgba(255,255,255,1);
+  box-shadow:inset 0px 0px 0px 2px rgba(255,255,255,1);
+}
+
+figcaption p {
+  padding:50px 15px;
+  font-family:'Titillium Web', sans-serif;
+  font-weight:300;
+  color:#333;
+  /* background-image 为元素设置背景图像 */
+  background-image:-webkit-gradient(linear, 0 0, 0 100%, from(rgba(255,255,255,0.35)), color-stop(0.3, rgba(255,255,255,0.35)), color-stop(0.3, transparent), color-stop(0.7, transparent), color-stop(0.7, rgba(255,255,255,0.35)), to(rgba(255,255,255,0.35)));
+  background-image:-webkit-linear-gradient(rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.35) 30%, transparent 30%, transparent 70%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0.35) 100%);
+  background-image:-moz-linear-gradient(rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.35) 30%, transparent 30%, transparent 70%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0.35) 100%);
+  background-image:-o-linear-gradient(rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.35) 30%, transparent 30%, transparent 70%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0.35) 100%);
+  background-image:linear-gradient(rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.35) 30%, transparent 30%, transparent 70%, rgba(255,255,255,0.35) 70%, rgba(255,255,255,0.35) 100%);
+  background-size:1px 100%;
+  background-repeat:no-repeat;
+  background-position:50% 0%;
+}
+
+input[type="radio"]:hover + label {
+  background:rgba(255,255,255,0.6);
+}
+
+input[type="radio"]:checked + label {
+  background:rgba(255,255,255,1);
+  -webkit-box-shadow:0px 0px 0px 5px rgba(255,255,255,0.3);
+  -moz-box-shadow:0px 0px 0px 5px rgba(255,255,255,0.3);
+  box-shadow:0px 0px 0px 5px rgba(255,255,255,0.3);
+}
+
+input[type="radio"]:checked + label:before {}
+
+/* 以下选择器选择前面有input[type="radio"]:checked的所有figure img元素 */
+input[type="radio"]:checked ~ figure img {
+  z-index:2;
+  -webkit-transform:translatex(0px);
+  -moz-transform:translatex(0px);
+  -ms-transform:translatex(0px);
+  -o-transform:translatex(0px);
+  transform:translatex(0px);
+  -webkit-transition:all .15s, z-index 0s;
+  -moz-transition:all .15s, z-index 0s;
+  -o-transition:all .15s, z-index 0s;
+  transition:all .15s, z-index 0s;
+}
+
+input[type="radio"]:checked ~ figure[class*="entypo-"]:before {
+  z-index:3;
+  color:rgba(255,255,255,0.5);
+  -webkit-transition:color .5s;
+  -moz-transition:color .5s;
+  -o-transition:color .5s;
+  transition:color .5s;
+}
+
+input[type="radio"]:checked ~ figure figcaption {
+  z-index:8;
+  -webkit-transform:translateX(0px);
+  -moz-transform:translateX(0px);
+  -ms-transform:translateX(0px);
+  -o-transform:translateX(0px);
+  transform:translateX(0px);
+  -webkit-transition:all .35s, .7s;
+  -moz-transition:all .35s, .7s;
+  -o-transition:all .35s, .7s;
+  transition:all .35s, .7s;
+}
+
+h2 {
+  margin-top:150px;
+  text-align:center;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight:300;
+  font-size:1.2rem;
+}
+
+h2 a {
+  position:relative;
+  color:tomato;
+  text-decoration:none;
+}
+
+h2 a:after {
+  content:'';
+  position:absolute;
+  bottom:-2px;
+  left:0;
+  width:0;
+  height:1px;
+  background:tomato;
+  -webkit-transition:width .1s;
+  -moz-transition:width .1s;
+  -o-transition:width .1s;
+  transition:width .1s;
+}
+
+/* 加了个after是何作用？ */
+h2 a:hover:after {
+  width:100%;
+}
+
+body {
+	background:#f0f0f0;
+}
+
+html, body {
+	width:100%;
+	height:100%;
+}

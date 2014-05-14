@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>盒模型测试</title>
+		<h1>盒模型测试  box-sizing:border-box;</h1>
+		<!-- 元素的内边距和边框会撑开元素，所以会比上面的div元素更大
+		加边框dashed是虚线，solid是实线 -->
+		<style type="text/css">		
+			.smaller {
+				width:800px;
+				margin:20px auto;
+				border:2px solid blue;
+				text-align:center;
+			}
+			
+			[class="larger"] {
+				width:800px;
+				margin:20px auto;
+				border:2px solid red;
+				text-align:center;
+				padding:50px;
+				border-width:10px;
+			}
+			
+			.auto {
+				width:800px;
+				margin:20px auto;
+				border:2px dashed green;
+				text-align:center;
+				padding:50px;
+				border-width:10px;
+				box-sizing:border-box;
+				-moz-box-sizing:border-box;
+				-webkit-box-sizing:border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="smaller">
+			<p>我小一些。。。</p>
+		</div>
+		
+		<div class="larger">
+			<p>我大一些。。。元素的内边距和边框会撑开元素，所以会比上面的div元素更大</p>
+		</div>
+		
+		<div class="auto">
+			<p>box-sizing:border-box 让元素可以自动计算边框和内边距，而不会出现元素被撑大的情况</p>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>max-width</title>
+		<h1>max-width 使元素大小随窗口大小改变</h1>
+		<style type="text/css">
+			#not-auto {
+				width:500px;
+				margin:0px auto;
+				text-align:center;
+				border:10px solid blue;
+				padding:20px;
+				-moz-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+			
+			.auto {
+				max-width:800px;
+				margin:20px auto;
+				text-align:center;
+				border:10px dashed red;
+				padding:30px;
+				-moz-box-sizing:border-box;
+				box-sizing:border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="not-auto">
+			div 大小不能随窗口改变而改变，会出现scroll
+		</div>
+		
+		<div class="auto">
+			div 大小随窗口改变而自动调整
+		</div>
+	</body>
+</html>
