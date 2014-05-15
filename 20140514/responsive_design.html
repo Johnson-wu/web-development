@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>响应式设计 之 媒体查询</title>
+		<h1>响应式设计 之 媒体查询(利用chrome比360的效果更明显)</h1>
+		<style type="text/css">
+			nav {
+				border:8px solid red;
+				box-sizing:border-box;
+			}
+			
+			section {
+				border:8px solid green;
+			}
+			
+			@media screen and (min-width:600px){
+				nav {
+					float:left;
+					width:25%;
+				}
+				
+				section {
+					margin-left:25%;
+				}
+			}
+			
+			@media screen and (max-width:599px){
+				nav li {
+					display:inline;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="container">
+			<ul>
+				<li>Home</li>
+				<li>Taco Menu</li>
+				<li>Draft List</li>
+				<li>Hours</li>
+				<li>Directions</li>
+				<li>Contact</li>
+			</ul>
+		</nav>
+		
+		<section>
+			使用媒体查询后，当你调整窗口大小时，布局比以前更酷了！！！
+		</section>
+		
+		<section>
+			Virtual environments help create separate Python setups while sharing a system-wide base install, for ease of maintenance. Virtual environments have their own set of private site packages (i.e. locally-installed libraries), and are optionally segregated from the system-wide site packages. Their concept and implementation are inspired by the popular virtualenv third-party package, but benefit from tighter integration with the interpreter core.
+		</section>
+	</body>
+</html>

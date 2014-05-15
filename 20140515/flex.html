@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>新的 flexbox 布局模式被用来重新定义CSS中的布局方式</title>
+		<style type="text/css">
+			.container01 {
+				display:flex;
+				display:-webkit-flex;
+				display:-moz-flex;
+			}
+			
+			nav {
+				width:200px;
+				border:8px solid red;
+			}
+			
+			ul {
+				list-style-type:square;
+			}
+			
+			.sectionflex01 {
+				flex:2;
+				-moz-flex:2;
+				-webkit-flex:2;
+				border:8px solid yellow;
+			}
+			
+			.sectionflex02 {
+				border:8px solid yellow;
+				flex:1;
+				-moz-flex:1;
+				-webkit-flex:1;
+			}
+			
+			.container02 {
+				border:8px solid green;
+				display:flex;
+				display:-webkit-flex;
+				display:-moz-flex;
+				padding:50px;
+			}
+			
+			.container03 {
+				border:8px solid green;
+				margin:auto;
+				padding:40;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h2>利用flex布局</h2>
+		<div class="container01">
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li>Coffee</li>
+					<li>Tea</li>
+					<li>Soap</li>
+					<li>Drink</li>
+				</ul>
+			</nav>
+			<section class="sectionflex01">
+				我是使用flex的section.占余下宽度的三分之二。
+			</section>
+			<section class="sectionflex02">
+				我是使用flex的section.占余下宽度的三分之一。
+			</section>
+		</div>
+		
+		<h2>利用flex垂直居中布局</h2>
+		<div class="container02">
+			<div class="container03">
+				css 垂直居中布局
+			</div>
+		</div>
+	</body>
+</html>

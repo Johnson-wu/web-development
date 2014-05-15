@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" content="Exercises of inline_block"/>
+		<title>inline_block 布局练习</title>
+		
+		<style type="text/css">
+			body {
+
+			}
+		
+			.num {
+				display:inline-block;
+				border:5px solid blue;
+				text-align:center;
+				width:25%;
+				height:100px;
+				box-sizing:border-box;
+				margin:0px;
+				padding:20px;
+				vertical-align:top;
+			}
+			
+			.section01 {
+				text-align:center;
+				border:5px solid blue;
+				margin-bottom:10px;
+				padding:20px;
+			}
+			
+			.num2 {
+				float:left;
+				border:5px solid yellow;
+				text-align:center;
+				width:25%;
+				height:100px;
+				box-sizing:border-box;
+				margin:0px;
+				padding:20px;
+			}
+			
+			.section02 {
+				clear:left;
+				border:5px solid yellow;
+				text-align:center;
+				padding:20px;
+			}
+			
+			.num3 {
+				display:inline-block;
+				border:5px solid red;
+				text-align:center;
+				width:25%;
+				height:100px;
+				box-sizing:border-box;
+				padding:20px;
+				margin-right:-8px;
+			}
+			
+			.section03 {
+				border:5px solid red;
+				text-align:center;
+				padding:20px;
+			}
+		</style>
+	</head>
+	
+	<body>		
+		<h2>这是第二种方法：用float浮动方式来完成布局</h2>
+		<div class="num2">
+			我是浮动块
+		</div>
+		<div class="num2">
+			我是浮动块
+		</div>
+		<div class="num2">
+			我是浮动块
+		</div>
+		<div class="num2">
+			我是浮动块
+		</div>
+		<div class="num2">
+			我是浮动块
+		</div>
+		<div class="num2">
+			我是浮动块
+		</div>
+		<div class="num2">
+			我是浮动块
+		</div>
+		<div class="num2">
+			我是浮动块
+		</div>
+		<section class="section02">
+			我在使用 clear，所以我不会浮动到上面那堆盒子的旁边。
+		</section>
+		
+		
+		<h2>这是第一种方法：用inline-block来完成布局,但是div元素块之前的间隙去不掉，为什么？</h2>
+		<div class="num">
+			我是一个inline-block行内块
+		</div>
+		<div class="num">
+			我是一个inline-block行内块
+		</div>
+		<div class="num">
+			我是一个inline-block行内块
+		</div>
+		<div class="num">
+			我是一个inline-block行内块
+		</div>
+		<div class="num">
+			我是一个inline-block行内块
+		</div>
+		<div class="num">
+			我是一个inline-block行内块
+		</div>
+		<div class="num">
+			我是一个inline-block行内块
+		</div>
+		<div class="num">
+			我是一个inline-block行内块
+		</div>
+		<section class="section01">
+			不使用clear,完成布局
+		</section>
+		
+		
+		<h2>这是第三种方法：仍是用inline-block来完成布局，同时用margin来去掉内联块间的间隙</h2>
+		<div class="num3">
+			我是浮动块
+		</div>
+		<div class="num3">
+			我是浮动块
+		</div>
+		<div class="num3">
+			我是浮动块
+		</div>
+		<div class="num3">
+			我是浮动块
+		</div>
+		<div class="num3">
+			我是浮动块
+		</div>
+		<div class="num3">
+			我是浮动块
+		</div>
+		<div class="num3">
+			我是浮动块
+		</div>
+		<div class="num3">
+			我是浮动块
+		</div>
+		<section class="section03">
+			不使用clear,完成布局，同时用margin来去掉内联块间的间隙
+		</section>
+	</body>
+</html>

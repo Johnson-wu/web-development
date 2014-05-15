@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>利用float来实现页面的布局</title>
+		<style type="text/css">
+			nav {
+				width:200px;
+				float:left;
+				border:10px solid red;
+				box-sizing:border-box;
+			}
+			
+			#a {
+				list-style-type:none;
+			}
+			#b {
+				list-style-type:square;
+			}
+			#c {
+				list-style-type:circle;
+			}
+			#d {
+				list-style-type:upper-roman;
+			}
+			#e {
+				list-style-type:lower-alpha;
+			}
+			#f {
+				list-style-type:none;
+			}
+			
+			section {
+				text-align:center;
+				border:10px solid yellow;
+				padding:50px;
+				margin-left:200px;
+			}
+			
+			ol {
+				border:10px solid blue;
+				width:200px;
+				box-sizing:border-box;
+				margin-top:-70px;
+			}
+			
+			a[name="bottom"] {
+				border:5px solid green;
+				box-sizing:border-box;
+				text-align:center;
+				padding:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<h2>Menu List</h2>
+			
+			<!-- ul与li是无序列表，而ol是有序列表 -->
+			<ul>
+				<li id="a"><a href="#bottom">到自定义锚点</a></li>
+				<li id="b">Taco Menu</li>
+				<li id="c">Draft List</li>
+				<li id="d">Hours</li>
+				<li id="e">Directions</li>
+				<li id="f">Contact</li>
+			</ul>
+		</nav>
+		
+		<section>
+			这个例子在容器上做了“清除浮动”，原来在这个例子中是不需要的，但是当nav比非浮动的内容还要高时就需要了
+		</section>
+		
+		<section>
+			这是第二个section部分
+		</section>
+		
+		<!-- ol 有序列表 -->
+		<ol start="10">
+			<li>coffee</li>
+			<!-- target可以指定是否在新窗口打开链接 -->
+			<li><a href="http://localhost:8069" target="_blank">OpenERP</a></li>
+			<!-- 链接为#号，指向的是页面的顶部锚点，点击后，页面回滚到顶部 -->
+			<li><a href="#">#Top</a></li>
+		</ol>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<a name="bottom">自定义的一个锚点</a>
+	</body>
+</html>
