@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>position 练习2</title>
+		<style type="text/css">
+			/*body {
+				display: inline;
+			}*/
+			* {
+				box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+			}
+
+			div {
+				/*必须对position进行赋值，因为默认为static,否则下面的position:absolute就会跳过div,而直接以body为基准*/
+				position: relative; 
+				border: 8px solid red;
+			}
+
+			nav {
+				list-style-type: circle;
+				width: 20%;
+				border: 8px solid green;
+				/*为什么加了下面的属性值，section就可以在左边并且顶到顶部*/
+				position: absolute;
+			}
+
+			section {
+				margin-left: 20%;
+				/*position: relative;
+				top: 0;*/
+				border: 8px solid yellow;
+			}
+
+			/*.section1 {
+				position: absolute;
+				top: 0;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li>Taco Menu</li>
+					<li>Draft List</li>
+					<li>Hours</li>
+					<li>Directions</li>
+					<li>Contact</li>
+				</ul>
+			</nav>
+			<section class="section1">
+				section 的margin-left 样式确保有足够的空间容纳nav元素
+			</section>
+			<section>
+				Well, I had one of those dreams when I was 23. When I suddenly woke up, I was thinking: What if we could download the whole web, and just keep the links? And I grabbed a pen and started writing! Sometimes it’s important to wake up and stop dreaming. I spent the middle of that night scribbling out the details and convincing myself it would work. Soon after, I told my advisor, Terry Winograd, it would take a couple of weeks for me to download the web—he nodded knowingly, fully aware it would take much longer but wise enough not to tell me. The optimism of youth is often underrated! Amazingly, at that time, I have no thoughts building a search engine. The idea wasn’t even on the radar. But, much later we happened upon a better way of ranking and we made a really great search engine, and Google was born. When a really great dream shows up, grab it!
+			</section>
+			<section>
+				Everyone in my family went here to Michigan: my brother, my Mom, my Dad—all of us. My father’s father worked in the Chevy plant in Flint, Michigan. He was an assembly line worker. He drove his two children here to Ann Arbor, and told them: That is where you’re going to college. I know it sounds funny now. Both of his kids actually did graduate from Michigan. That was the American dream.
+			</section>
+		</div>
+	</body>
+</html>

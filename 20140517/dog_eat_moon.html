@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>天狗食月</title>
+		<h1>css3 通过animation实现动画效果</h1>
+		<style type="text/css">
+			h1 {
+				color: red;
+			}
+			body {
+				background: black;
+			}
+
+			.black, .white{
+				/*这里把元素定义为正方形*/
+				width: 300px;
+				height: 300px;
+				/*border-radius 用于向元素添加圆形边框
+				对元素的边框做圆角处理，可以为px,也可以用百分比，达到50%最成了一个圆*/
+				border-radius: 50%;
+				position: absolute;
+				top: 100px;
+			}
+
+			.black {
+				background: black;
+				left: 100px;
+				z-index: 5;
+				/*animation 是一个用来定义动画的属性，有个属性值
+				animation-name: 绑定到选择器的keyframes的名称;
+				animation-duration:完成动画要花费的时间;
+				animation-timeing-function: 规定动画的速度曲线;
+				animation-delay: ;
+				animation-iteration-count: 动画播放次数n or infinite(无穷次);
+				animation-direction: 是否应该轮流反向播放动画 alternate为轮流反向播放;*/
+				-webkit-animation: move 11s infinite alternate;
+			}
+
+			.white {
+				background: #FF9933 center;
+				/*-webkit-backgroud-size: 320px 320px;*/
+				left: 600px;
+				/*z-index: 设置图像的堆叠顺序，值越来越在上面*/
+				z-index: 4;
+				/*box-shadow 向框添加一个或多个阴影*/
+				/*box-shadow: 0 0 5px #FC3;*/
+				width: 301px;
+				height: 301px;
+				/*border-radius 用于向元素添加圆形边框
+				对元素的边框做圆角处理，可以为px,也可以用百分比，达到50%最成了一个圆*/
+				border-radius: 50%;
+				position: absolute;
+				top: 99px;
+			}
+
+			@-webkit-keyframes move {
+				from {left: 100px}
+				to {left: 600.5px}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="black"></div>
+		<div class="white"></div>
+	</body>
+</html>

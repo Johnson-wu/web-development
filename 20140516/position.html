@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>position 布局练习</title>
+		<h1>position 有很多属性值，但是position很重要</h1>
+		<style type="text/css">
+			div {
+				border:8px solid brown;
+				text-align:center;
+				box-sizing:border-box;
+				padding: 40px;
+				width: 80%;
+			}
+
+			.static {
+				position: static;
+				top: 1000px;
+			}
+
+			.relative_only {
+				position: relative;
+			}
+
+			.relative_other {
+				position: relative;
+				top: 50px;
+				left: 50px;
+			}
+
+			.position_absolute {
+				position: absolute;
+				top: 8em;
+				border-width: 3px;
+				background-color: green;
+				filter: alpha(Opacity=50);
+				-moz-opacity: 0.5;
+				opacity: 0.5;
+				width: 50%;
+				color: gold;
+				font-weight: 10px;
+			}
+
+			.margin {
+				margin: 10px, 50px;
+			}
+
+			.fixed-position {
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="static">
+			这是一个static div，position被置为static的元素不会被positioned,所以即使添加了top属性，也不会有任何效果，位置不会被改变。
+		</div>
+
+		<div class="relative_only">
+			这是一个relative only div，并且没有其他位置方面的属性值
+		</div>
+
+		<div class="relative_other">
+			这是一个relative position div with top value。因此元素会偏离其正常的位置。并且其他的元素也不会调整位置来弥补其偏离后造成的空隙。接下来的两个div不会补上空隙
+		</div>
+
+		<div class="position_absolute">
+			这是一个absolute position, 这个时候top的效果也就发生了变化，是对于整个窗口容器来讲。（理解错误！）
+			absolute是绝对定位，是以其父元素为基准来定位！但是如果父元素是position:static，则这个元素会跳过这个父元素，而更上级元素为基准！！！
+		</div>
+
+		<div class="margin">
+			This is a div with margin attr and can show the difference between position and margin.
+		</div>
+
+		<div class="fixed-position">
+			这是一个fixed div，是固定定位，位置是对于视窗来讲的。无论视窗如何滚动，元素都在视窗的固定位置不变。
+		</div>
+	</body>
+</html>
