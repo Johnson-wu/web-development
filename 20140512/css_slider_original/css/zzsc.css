@@ -214,10 +214,10 @@ input[type="radio"]:checked ~ figure img {
   -ms-transform:translatex(0px);
   -o-transform:translatex(0px);
   transform:translatex(0px);
-  -webkit-transition:all .15s, z-index 0s;
-  -moz-transition:all .15s, z-index 0s;
-  -o-transition:all .15s, z-index 0s;
-  transition:all .15s, z-index 0s;
+  -webkit-transition:all 2.15s, z-index 0s;
+  -moz-transition:all 2.15s, z-index 0s;
+  -o-transition:all 2.15s, z-index 0s;
+  transition:all 2.15s, z-index 0s;
 }
 input[type="radio"]:checked ~ figure[class*="entypo-"]:before {
   z-index:3;
@@ -234,10 +234,10 @@ input[type="radio"]:checked ~ figure figcaption {
   -ms-transform:translateX(0px);
   -o-transform:translateX(0px);
   transform:translateX(0px);
-  -webkit-transition:all .35s, .7s;
-  -moz-transition:all .35s, .7s;
-  -o-transition:all .35s, .7s;
-  transition:all .35s, .7s;
+  -webkit-transition:all 2.35s, 2.7s;
+  -moz-transition:all 2.35s, 2.7s;
+  -o-transition:all 2.35s, 2.7s;
+  transition:all 2.35s, 2.7s;
 }
 h2 {
   margin-top:150px;

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>时钟程序第二次练习</title>
+		<h1>时钟第二次练习，并加上动画效果</h1>
+		<style type="text/css">
+			/*如果加上动画效果后，不影响画图，那就代表下面canvas上画图时，圆心的位置包括所有到的坐标都是以所属的canvas为基准，而动画时是移动整个canvas元素*/
+			#clock {
+				position: absolute;
+				left: 100px;
+				-webkit-animation:myMove 11s infinite alternate;
+			}
+
+			@-webkit-keyframes myMove {
+				from {left: 20px}
+				to {left: 850px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<canvas id="clock" width="500" height="500">时钟</canvas>
+			<!-- 为什么下面这段脚本放在head中，clock.getContext()返回的是null,js脚本写的位置也有关系吗？ -->
+			<script type="text/javascript">
+				var clock = document.getElementById("clock");
+				
+				/* 获取2d作图环境 */
+				var context = clock.getContext("2d");
+
+				function drawClockBorder() {
+					/* 第一步：画钟框 */
+					/* ？？？ */
+					context.clearRect(0,0,500,500);
+					
+					context.beginPath();
+					/*stroke相当于画笔*/
+					context.strokeStyle = "#049";
+					context.lineWidth = 10;
+
+					/* 此函数各参数的意义？？？ */
+					context.arc(250,250,200,0,360,false);
+					context.stroke();
+					context.closePath();
+
+					/* 第二步：画刻度 */
+					/*画时刻度*/
+					for(var i=0;i<12;i++){
+						/*context.save()是给context设置一个还原点，保存了context所有属性吗？*/
+						context.save();
+						/*将原点设置在正方形的中央*/
+						context.translate(250,250);
+						context.rotate(i*30*Math.PI/180);
+						context.strokeStyle = "#000000";
+						context.lineWidth = 7;
+						context.beginPath();
+						/*指定画笔移动路径*/
+						context.moveTo(0, -170);
+						context.lineTo(0, -190);
+						/*开始画*/
+						context.stroke();
+						context.closePath();
+						/*将context恢复到之前的还原点*/
+						context.restore();
+					}
+
+					/*画分刻度*/
+					for(var i=0;i < 60; i++){
+						context.save();
+						context.translate(250,250);
+						context.rotate(i*6*Math.PI/180);
+						if (i % 5 == 0) {
+							context.strokeStyle = "gold";
+						} else {
+							context.strokeStyle = "#000000";
+						};
+						context.lineWidth = 5;
+						context.beginPath();
+						context.moveTo(0, -180);
+						context.lineTo(0, -190);
+						context.stroke();
+						context.closePath();
+						context.restore();
+					}
+
+				}
+
+				function drawClock() {
+					/*如果不清空画图区域，上次画的图像也存在画布上
+					但是如果不想让框重画，这里需要清空一个圆形区域.没有下面的方法，如何清空一个圆形区域？？？*/
+					/*context.clearArc(250,250,200,0,360);*/
+
+					/*第三步：画指针*/
+					/*获取当前时间*/
+					var now = new Date();
+					var hour = now.getHours();
+					var minute = now.getMinutes();
+					var second = now.getSeconds();
+					/*alert(minute/60);*/
+					hour = hour + minute/60;
+
+					/*画时针*/
+					context.save();
+					context.translate(250,250);
+					context.rotate(hour*30*Math.PI/180);
+					context.lineWidth = 7;
+					context.strokeStyle = "black";
+					context.beginPath();
+					context.moveTo(0,10);
+					context.lineTo(0,-100);
+					context.stroke();
+					context.closePath();
+					context.restore();
+
+					/*画分针*/
+					context.save();
+					context.translate(250,250);
+					context.rotate(minute*6*Math.PI/180);
+					context.lineWidth = 5;
+					context.strokeStyle = "black";
+					context.beginPath();
+					context.moveTo(0,10);
+					context.lineTo(0,-130);
+					context.stroke();
+					context.closePath();
+					context.restore();
+
+					/*画秒针*/
+					context.save();
+					context.translate(250,250);
+					context.rotate(second*6*Math.PI/180);
+					context.lineWidth = 3;
+					context.strokeStyle = "red";
+					context.beginPath();
+					context.moveTo(0,15);
+					context.lineTo(0,-150);
+					context.stroke();
+					context.closePath();
+
+					/*给秒针画上一些效果*/
+					context.beginPath();
+					context.arc(0,0,5,0,360);
+					context.fillStyle = "white";
+					context.fill();
+					context.stroke();
+					context.closePath();
+
+					context.beginPath();
+					context.arc(0,-135,3,0,360);
+					context.fillStyle = "white";
+					context.fill();
+					context.stroke();
+					context.closePath();
+					context.restore();
+				}
+				drawClockBorder();
+				setInterval(drawClock,1000);
+		</script>
+		</div>
+	</body>
+</html>

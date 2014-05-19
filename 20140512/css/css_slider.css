@@ -115,6 +115,9 @@ figure[class*="entypo-"]:before {
 	z-index:1;
 	-webkit-transition:color .1s;
 	-moz-transition:color .1s;
+  -o-transition:color .1s;
+  transition:color .1s;
+
 }
 
 a[class*="entypo-"]:before  {
@@ -153,14 +156,14 @@ figure img {
 	height:300px;
 	z-index:1;
 	-webkit-transform:translateX(600px);
-    -moz-transform:translateX(600px);
-    -ms-transform:translateX(600px);
-    -o-transform:translateX(600px);
-    transform:translateX(600px);
-    -webkit-transition:all .15s .15s, z-index 0s;
-    -moz-transition:all .15s .15s, z-index 0s;
-    -o-transition:all .15s .15s, z-index 0s;
-    transition:all .15s .15s, z-index 0s;
+  -moz-transform:translateX(600px);
+  -ms-transform:translateX(600px);
+  -o-transform:translateX(600px);
+  transform:translateX(600px);
+  -webkit-transition:all .15s .15s, z-index 0s;
+  -moz-transition:all .15s .15s, z-index 0s;
+  -o-transition:all .15s .15s, z-index 0s;
+  transition:all .15s .15s, z-index 0s;
 }
 
 figcaption {
@@ -182,10 +185,10 @@ figcaption {
     -ms-transform:translateX(300px);
     -o-transform:translateX(300px);
     transform:translateX(300px);
-    -webkit-transition:all .35s;
-    -moz-transition:all .35s;
-    -o-transition:all .35s;
-    transition:all .35s;
+    -webkit-transition:all 2.35s;
+    -moz-transition:all 3.35s;
+    -o-transition:all 2.35s;
+    transition:all 2.35s;
 }
 
 h4 {
