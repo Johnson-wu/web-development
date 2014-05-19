@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>transition 过渡效果练习</title>
+		<h1>transition 过渡效果练习</h1>
+		<style type="text/css">
+			div {
+				width: 300px;
+				height: 30px;
+				background: green;
+				/*ease 是transition过度效果转换的速度曲线.
+				第一个参数：设定会过渡的属性有哪些。测试后发现没有什么作用嘛。关键是看hover里面包含了哪些属性。*/
+				-webkit-transition: width .5s ease;
+			}
+
+			div:hover {
+				width: 150px;
+				background: #9C0;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

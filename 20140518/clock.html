@@ -89,6 +89,16 @@
 					/*如果不清空画图区域，上次画的图像也存在画布上
 					但是如果不想让框重画，这里需要清空一个圆形区域.没有下面的方法，如何清空一个圆形区域？？？*/
 					/*context.clearArc(250,250,200,0,360);*/
+					/*没有找到可以清除一个圆形的方法，变通的用画一个白色圆来达到效果*/
+					context.save();
+					context.beginPath();
+					context.arc(250,250,160,0,360,false);
+					context.strokeStyle = "white";
+					context.fillStyle = "white";
+					context.fill();
+					context.stroke();
+					context.closePath();
+					context.restore();
 
 					/*第三步：画指针*/
 					/*获取当前时间*/
@@ -154,6 +164,7 @@
 					context.restore();
 				}
 				drawClockBorder();
+				drawClock();
 				setInterval(drawClock,1000);
 		</script>
 		</div>
