@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Add counter to header</title>
+		<style type="text/css">
+			* {margin:0;top:0;}
+			
+			body {
+				color: #333;
+				font-size: 14px;
+				font-family: 'Microsoft Yahei';
+			}
+			h2 {
+				/*section increment according to <h2> */
+				counter-increment: section;
+				/*reset subsection's number to 0 when <h2> appears*/
+				counter-reset: subsection;
+			}
+			h2:before {
+			/*	counter-increment: section;*/
+				content: 'A ' counter(section) '.';
+			}
+			p {
+				/*subsection increment according to <p>*/
+				counter-increment: subsection;
+			}
+			p:before {
+				/*put 'counter-increment' here still effect */
+				/*counter-increment: subsection;*/
+				content: counter(section) '.' counter(subsection) ' ';
+			}
+
+			/*body {
+				color: #333;
+				font-size: 14px;
+				font-family: 'Microsoft Yahei';
+			}
+			h2{
+				counter-increment: mycounter;
+			}
+			h2:before {
+				color: #05a;
+				/*custom define a counter style
+				content: counter(mycounter,upper-alpha)'.';
+			}*/
+		</style> 
+	</head>
+	<body>
+		<h2>This is Head of Paragraph</h2>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<h2>This is Head of Paragraph</h2>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<h2>This is Head of Paragraph</h2>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<h2>This is Head of Paragraph</h2>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<h2>This is Head of Paragraph</h2>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+		<p>Hello , my name is Rocky. I'm the king of boxer !</p>
+	</body>
+</html>

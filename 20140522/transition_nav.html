@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>使用transition制作导航动态效果</title>
+		<head></head>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+
+			#container {
+				margin-top: 20px;
+				height: 30px;
+				position: relative;
+				z-index: 99;
+			}
+
+			.nav {
+				cursor: pointer;
+				/*加了float后，便破坏了元素的block属性。浮动元素间inline-block*/
+				float: left;
+				width: 100px;
+				height: 30px;
+				background: #CCCC66;
+				/*后面两个属性值是何作用？*/
+				font-family: "Times New Roman", Times, serif;
+				margin-left: 4px;
+				text-align: center;
+				/*定义元素的行高，保障文字内容不溢出*/
+				line-height: 30px;
+				/*动画效果，ease-out指以慢速结束，0s是delay属性*/
+				-webkit-transition: all 0.3s ease-out 0s;
+				transition: all 0.3s ease-out 0s;
+			}
+
+			.nav_child {
+				/*border-bottom: none;*/
+			}
+
+			/*将子元素内容在界面上隐藏起来，后面加上显示的过渡效果*/
+			.nav_child .xxx {
+				height: 0px;
+				width: 0px;
+				font-size: 0px;
+				background: #363;
+				border: #fff 1px solid;
+				/*0为完全透明*/
+				opacity: 0;
+				color:#FFFFFF;
+			}
+
+
+			/*为所有子元素加上过渡效果，并且Delay时间逐渐延长*/
+			.nav .nav_child_1 {
+				-webkit-transition: all 0.2s ease-out 0s;
+				transition: all 0.2s ease-out 0s;
+			}
+			.nav .nav_child_2 {
+				-webkit-transition: all 0.2s ease-out 0.05s;
+				transition: all 0.2s ease-out 0.05s;
+			}
+			.nav .nav_child_3 {
+				-webkit-transition: all 0.2s ease-out 0.1s;
+				transition: all 0.2s ease-out 0.1s;
+			}
+			.nav .nav_child_4 {
+				-webkit-transition: all 0.2s ease-out 0.15s;
+				transition: all 0.2s ease-out 0.15s;
+			}
+			.nav .nav_child_5 {
+				-webkit-transition: all 0.2s ease-out 0.2s;
+				transition: all 0.2s ease-out 0.2s;
+			}
+
+
+			/*加入元素的过渡属性*/
+			.nav:hover {
+				background: #0099FF;
+				width: 120px;
+			}
+
+			#nav_3_5 {
+				background: #66F;
+			}
+			/*hover 后面跟了其他元素，则代表当nav hover后，如果nav_child及xxx元素自身定义的有transition，那么下面的值是为后面的元素过渡使用*/
+			.nav:hover .nav_child .xxx {
+				opacity: 1;
+				height: 25px;
+				width: 96px;
+				font-size: 16px;
+				line-height: 25px;
+			}
+
+			/*如果将过渡属性放在这里，效果会很卡，为什么？*/
+			.xxx {
+			/*	-webkit-transition: all 0.2s ease-out 0s;
+				transition: all 0.2s ease-out 0s;*/
+			}
+
+			/*定义当鼠标移动到xxx时，过渡效果。transition写到hover里面也可以吗？为什么‘>’之前的内容不加的话，width的变化出不来？*/
+			.nav .nav_child > .xxx:hover {
+				background: #F6C;
+				width: 110px;
+				-webkit-transition: all 0.2s ease-out 0s;
+				transition: all 0.2s ease-out 0s;
+			}
+
+/*			#nav3_5 {
+				position: relative;
+				background: #66F;
+			}*/
+			
+			.nav_child_child {
+				position: relative;
+				left: 110px;
+				top: -25px;
+				height: 0;
+				padding-left: 2px;
+				border: none;
+			}
+
+			.item {
+				opacity: 0;
+				width: 0;
+				height: 0;
+				line-height: 0;
+				background: #363; 
+				/*通过实体白色边框来达到元素间有margin的效果*/
+				border:#fff 1px solid;
+			}
+
+			.nav_child_child .nav_child_child_1 {
+				-webkit-transition: all 0.2s ease-out 0s;
+				transition: all 0.2s ease-out 0s;
+			}
+			.nav_child_child .nav_child_child_2 {
+				-webkit-transition: all 0.2s ease-out 0.05s;
+				transition: all 0.2s ease-out 0.05s;
+			}
+			.nav_child_child .nav_child_child_3 {
+				-webkit-transition: all 0.2s ease-out 0.1s;
+				transition: all 0.2s ease-out 0.1s;
+			}
+
+			#nav_3_5:hover {
+				background: #0099FF;
+			}
+			
+			#nav_3_5:hover .nav_child_child .item{
+				color: black;
+				opacity: 1;
+				height: 25px;
+				width: 96px;
+				font-size: 16px;
+				line-height: 25px;
+				background: blue;
+			}
+
+			/*为什么前面设置item属性时可以直接.item,而这里必须加上父元素，否则不出效果*/
+			#nav_3_5 .nav_child_child .item:hover {
+				width: 110px;
+				background:#CC3399;
+				/*不需要再重新加一个过渡属性也可以，除非是要新的过渡效果，下面代码是多余的*/
+				-webkit-transition: all 0.8s ease-out 0s;
+				transition: all 0.8s ease-out 0s;
+			}
+
+			footer {
+				position: absolute;
+				top: 300px;
+				left: 100px;
+			}
+
+			footer p {
+				margin: 10px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="container">
+			<div id="nav_1" class="nav">
+				NAV_1
+				<div class="nav_child">
+					<!-- 一个元素被赋予多个类名，这样方便把属于多个类的style赋予一个元素，样式模块化可以方便代码的重用 -->
+					<div id="nav_1_1" class="nav_child_1 xxx">Test</div>
+					<div id="nav_1_2" class="nav_child_2 xxx">Test</div>
+					<div id="nav_1_3" class="nav_child_3 xxx">Test</div>
+					<div id="nav_1_4" class="nav_child_4 xxx">Test</div>
+				</div>
+			</div>
+
+			<div id="nav_2" class="nav">
+				NAV_2
+				<div class="nav_child">
+					<div id="nav_2_1" class="nav_child_1 xxx">Test</div>
+					<div id="nav_2_2" class="nav_child_2 xxx">Test</div>
+					<div id="nav_2_3" class="nav_child_3 xxx">Test</div>
+					<div id="nav_2_4" class="nav_child_4 xxx">Test</div>
+				</div>
+			</div>
+
+			<div id="nav_3" class="nav">
+				NAV_3
+				<div class="nav_child">
+					<div id="nav_3_1" class="nav_child_1 xxx">Test</div>
+					<div id="nav_3_2" class="nav_child_2 xxx">Test</div>
+					<div id="nav_3_3" class="nav_child_3 xxx">Test</div>
+					<div id="nav_3_4" class="nav_child_4 xxx">Test</div>
+					<div id="nav_3_5" class="nav_child_5 xxx">
+						Test
+						<div class="nav_child_child">
+							<div class="nav_child_child_1 item">child_1</div>
+							<div class="nav_child_child_2 item">child_2</div>
+							<div class="nav_child_child_3 item">child_3</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<h2>知识点：</h2>
+			<p>1. 一个元素的class属性可以有多个值，目的是为了将多个样式模块用于该元素</p>
+			<p>2. 一个元素可以赋予多次“transition：”属性，只要把握好设置时机，就可以在同一个元素的不同操作时期展示不同的过渡效果。</p>
+		</footer> 
+	</body>
+</html>

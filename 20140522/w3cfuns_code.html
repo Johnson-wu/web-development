@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+
+  <title>无标题文档</title>
+  <style>
+  *{        padding:0;        margin:0;        }
+  #container{   height:30px;        margin-top:20px;        position:relative;        z-index:99;        }
+  .nav{        cursor:pointer;        float:left;        width:100px;        height:30px;        background:#CCCC66;        font-family:"Times New Roman", Times, serif;        margin-left:4px;        text-align:center;        line-height:30px;        -webkit-transition:all 0.3s ease-out 0s;        transition:all 0.3s ease-out 0s;        }
+  .nav_child{        /*border:#fff 2px solid;*/        border-bottom:none;        }
+  .nav_child .item{        height:0px;        width:0px;        font-size:0;        line-height:0px;        background:#363;        border:#fff 1px solid;        opacity:0;        color:#FFFFFF;        }
+  .nav_child .nav_child_1{        -webkit-transition:all 0.2s ease-out 0s;        transition:all 0.2s ease-out 0s;        }
+  .nav_child .nav_child_2{        -webkit-transition:all 0.2s ease-out 0.05s;        transition:all 0.2s ease-out 0.05s;        }
+  .nav_child .nav_child_3{        -webkit-transition:all 0.2s ease-out 0.1s;        transition:all 0.2s ease-out 0.1s;        }
+  .nav_child .nav_child_4{        -webkit-transition:all 0.2s ease-out 0.15s;        transition:all 0.2s ease-out 0.15s;        }
+  .nav_child .nav_child_5{        -webkit-transition:all 0.2s ease-out 0.2s;        transition:all 0.2s ease-out 0.2s;        }
+  .nav:hover{        background:#0099FF;        width:120px;}
+  .nav:hover .nav_child .item{        opacity:1;        height:25px;        width:96px;        font-size:16px;        line-height:25px;        }
+  .nav .nav_child > .item:hover{        background:#F6C;        width:110px;        -webkit-transition:all 0.2s ease-out 0s;        transition:all 0.2s ease-out 0s;        }
+  #nav_3_2{        position:relative;        background:#66F;        }
+  .nav_child_child{        position:absolute;        left:94px;        top:-1px;        height:0;        padding-left:2px;        border:none;        -webkit-transition:all 0.2s ease-out 0s;        transition:all 0.2s ease-out 0s;        }
+  #nav_3_2 .nav_child_child div{        opacity:0;        height:0px;        width:0px;        font-size:0px;        line-height:0px;        background:#33C;        border:#fff 1px solid;        }
+  #nav_3_2:hover{        background:#0099FF;        }
+  #nav_3_2:hover .nav_child_child {        height:120px;        left:108px;        }
+  #nav_3_2:hover .nav_child_child div{        opacity:1;        height:25px;        width:94px;        font-size:16px;        line-height:25px;        }
+  #nav_3_2 .nav_child_child div:hover{        background:#CC3399;        }
+  #bottom{        margin-top:10px;        height:200px;        background:#CCCCCC;        display:none;        }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div class="nav" id="nav_1">
+      NAV_1
+
+      <div class="nav_child">
+        <div class="nav_child_1 item" id="nav_1_1">
+          TEST
+        </div>
+
+        <div class="nav_child_2 item" id="nav_1_2">
+          TEST
+        </div>
+
+        <div class="nav_child_3 item" id="nav_1_3">
+          TEST
+        </div>
+
+        <div class="nav_child_4 item" id="nav_1_4">
+          TEST
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="nav_2">
+      NAV_2
+
+      <div class="nav_child">
+        <div class="nav_child_1 item" id="nav_2_1">
+          TEST
+        </div>
+
+        <div class="nav_child_2 item" id="nav_2_2">
+          TEST
+        </div>
+
+        <div class="nav_child_3 item" id="nav_2_3">
+          TEST
+        </div>
+
+        <div class="nav_child_4 item" id="nav_2_4">
+          TEST
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="nav_3">
+      NAV_3
+
+      <div class="nav_child">
+        <div class="nav_child_1 item" id="nav_3_1">
+          TEST
+        </div>
+
+        <div class="nav_child_2 item" id="nav_3_2">
+          TEST
+
+          <div class="nav_child_child">
+            <div class="nav_child_1">
+              1
+            </div>
+
+            <div class="nav_child_2">
+              2
+            </div>
+
+            <div class="nav_child_3">
+              3
+            </div>
+
+            <div class="nav_child_4">
+              4
+            </div>
+          </div>
+        </div>
+
+        <div class="nav_child_3 item" id="nav_3_3">
+          TEST
+        </div>
+
+        <div class="nav_child_4 item" id="nav_3_4">
+          TEST
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="nav_4">
+      NAV_4
+
+      <div class="nav_child">
+        <div class="nav_child_1 item" id="nav_4_1">
+          TEST
+        </div>
+
+        <div class="nav_child_2 item" id="nav_4_2">
+          TEST
+        </div>
+
+        <div class="nav_child_3 item" id="nav_4_3">
+          TEST
+        </div>
+
+        <div class="nav_child_5 item" id="nav_4_4">
+          TEST
+        </div>
+      </div>
+    </div>
+
+    <div class="nav" id="nav_5">
+      NAV_5
+
+      <div class="nav_child">
+        <div class="nav_child_1 item" id="nav_5_1">
+          TEST
+        </div>
+
+        <div class="nav_child_2 item" id="nav_5_2">
+          TEST
+        </div>
+
+        <div class="nav_child_3 item" id="nav_5_3">
+          TEST
+        </div>
+
+        <div class="nav_child_4 item" id="nav_5_4">
+          TEST
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="bottom">
+    texttexttexttexttexttexttexttexttexttexttexttexttexttexttext
+  </div>
+</body>
+</html>
