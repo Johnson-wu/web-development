@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title>telephone number</title>
+    <!--<script src="jquery-1.10.1.min.js"></script>-->
+    <style>
+*{        margin:0;        padding:0;}form{        width:300px;        position:relative;        margin:10px;}fieldset{       
+padding:10px;        border:1px dashed #ddd;}#num_info{        display:none;        position:absolute;        left: 11px;       
+bottom: 37px;        width: 170px;        height:30px;        border:1px solid #ddd;        border-bottom:none;       
+background-color:#f6f6f6;        font:20px/30px verdana,arial;        color:#F90;        }#num{        width:170px;       
+height:24px;        line-height:24px;        margin-top:40px;        border:1px solid #bbb;}#num:focus{        outline:none;       
+border-color:#999;}p{        font-size:12px;        color:#999;}
+</style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+      <legend>Telephone Number</legend> 
+      <label id="num_info" for="num"></label> 
+      <input type="text" id="num" maxlength="11" /></fieldset>
+    </form>
+    <script>
+//$(function(){//        var $numInfo=$(&#39;#num_info&#39;);        //        $(&#39;#num&#39;).focus(function() {  //       
+this.style.imeMode=&#39;inactive&#39;;  //        }).keyup(function(){        //                var
+val=$(this).val().replace(/[^\d]/g,&#39;&#39;),//                        $(this).val(val),//                        _val,//        
+               len=val.length;//                if(val!==&#39;&#39;){$numInfo.show();}        //                if(len&lt;=3){//   
+                    _val = val.substr(0,3);//                }//                else if(len&gt;3&amp;&amp;len&lt;=7){//            
+           _val = val.substr(0,3)+&quot;-&quot;+val.substr(3,len);//                }//                else if(len&gt;7){//        
+               _val= val.substr(0,3)+&quot;-&quot;+val.substr(3,4)+&#39;-&#39;+val.substr(7,len);//                }//             
+  $numInfo.text(_val);//        }).blur(function(){//                $numInfo.hide();//        })//})window.onload=function(){     
+  var $numInfo=document.getElementById(&#39;num_info&#39;),                $num=document.getElementById(&#39;num&#39;),            
+   _val,_val1,_val2;        $num.onkeyup=function(){                var val=this.value=this.value.replace(/[^\d]/g,&#39;&#39;),    
+                   len=val.length;                        if(val!=&#39;&#39;){$numInfo.style.display=&#39;block&#39;;}             
+  if(len&lt;=3){                        _val=_val1= val.substr(0,3);                }                else
+if(len&gt;3&amp;&amp;len&lt;=7){                        _val=_val2=_val1+&quot;-&quot;+val.substr(3,len);                }         
+      else if(len&gt;7){                        _val=_val2+&#39;-&#39;+val.substr(7,len);                }               
+$numInfo.innerHTML=_val;        }        $num.onblur=function(){                $numInfo.style.display=&#39;none&#39;;             
+          }}
+</script>
+  </body>
+</html>

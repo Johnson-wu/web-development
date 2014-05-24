@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title></title>
+    <style type="text/css">
+        .banner {            width: 600px;            height: 92px;            position: relative;            margin: 0 auto;      
+     border:8px solid #CFC;            overflow: hidden;        }        .banner&gt;a{position: absolute;display: block;width:
+30px;height: 50px; background: url([img]http://www.w3cfuns.com/resource/images/extend/portal/default/indexsprites.png[/img])
+no-repeat ;  z-index: 2; top:20px;}       #prevbt { background-position: 0 -120px; }        #nextbt { background-position: -50px
+-120px; left: 580px;}        .banner ul{position: absolute; margin:0; padding:0; }        .banner li{list-style: none;float: left;
+margin:3px; padding: 2px;  border: 1px solid #ccc;}        .banner li a{ display: block;height:80px; }        a img{ border:
+none;width:200px; height:80px;  }    
+</style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){            $(&quot;.banner ul&quot;).html($(&quot;.banner ul&quot;).html()+$(&quot;.banner
+ul&quot;).html());             var $li=$(&quot;.banner ul li&quot;),                   $liLen=$li.length;            
+$(&quot;.banner ul&quot;).width($li.outerWidth(true)*$liLen);             var $ulWid= $(&quot;.banner ul&quot;).outerWidth();      
+     $(&quot;.banner ul&quot;).css(&quot;left&quot;,-$ulWid/4);             var  timer=setInterval(function(){                 
+startMove(-1,-$ulWid/2,0)             },30);             $(&quot;#nextbt&quot;).mouseover(function(){                 
+clearInterval(timer);                  timer=setInterval(function(){startMove(1,0,-$ulWid/2)},30);             });            
+$(&quot;img&quot;).mouseover(function(){ clearInterval(timer);})                           .mouseout(function(){
+timer=setInterval(function(){startMove(-1,-$ulWid/2,0)},30); });             function startMove(ispeed,startLeft,endLeft){         
+       if($(&quot;.banner ul&quot;).position().left==startLeft){                    $(&quot;.banner
+ul&quot;).css(&quot;left&quot;,endLeft);                 }else{                    $(&quot;.banner
+ul&quot;).css(&quot;left&quot;,$(&quot;.banner ul&quot;).position().left+ispeed+&quot;px&quot;);                 }             }   
+    });    
+</script>
+  </head>
+  <body>
+    <div class="banner">
+    <a href="javascript:;" id="prevbt"></a> 
+    <a href="javascript:;" id="nextbt"></a>
+    <ul>
+      <li>
+        <a href="blog-5396571-5396377.html" target="_blank">
+          <img alt="牛逼程序员的代码是这么写的"
+          src="http://www.w3cfuns.com/data/attachment/cmplugin/W3Cfuns_Adv/portal/index/focus/201308/08/160924nqqee6q3kci1c3bq.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="article-1097-1.html" target="_blank">
+          <img alt="404 error page"
+          src="http://www.w3cfuns.com/data/attachment/cmplugin/W3Cfuns_Adv/portal/index/focus/201308/18/131900kh65lhfbf70ihqi5.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="article-5598300-1-1.html" target="_blank">
+          <img alt="coremail"
+          src="http://www.w3cfuns.com/data/attachment/cmplugin/W3Cfuns_Adv/portal/index/focus/201308/15/204745x93zq6q3fuo1f9tf.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="article-5598246-1-1.html" target="_blank">
+          <img alt="冰点优惠"
+          src="http://www.w3cfuns.com/data/attachment/cmplugin/W3Cfuns_Adv/portal/index/focus/201308/11/220739h9yu3x3ygxj8u7sp.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="blog-5418063-5396285.html" target="_blank">
+          <img alt="迅雷7.9CSS3动画"
+          src="http://www.w3cfuns.com/data/attachment/cmplugin/W3Cfuns_Adv/portal/index/focus/201308/09/180713dfw1xdi43ne4836f.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="blog-5414721-5396476.html" target="_blank">
+          <img alt="Chrome CSS3 Animation"
+          src="http://www.w3cfuns.com/data/attachment/cmplugin/W3Cfuns_Adv/portal/index/focus/201308/09/160802oehxly7ehfll7hd5.jpg" />
+        </a>
+      </li>
+      <li>
+        <a href="thread-5598189-1-1.html" target="_blank">
+          <img alt="Ajax正确读音"
+          src="http://www.w3cfuns.com/data/attachment/cmplugin/W3Cfuns_Adv/portal/index/focus/201308/08/164029azxs96dod8889zn3.jpg" />
+        </a>
+      </li>
+    </ul></div>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Css3 手风琴练习</title>
+		<style type="text/css">
+			ul {
+				position: relative;
+				top: 40px;
+				margin: 30px auto;
+				width: 300px;
+				height: 400px;
+				padding: 10px;
+				border: 1px #CCC solid;
+				font-size: 16px;
+				overflow: hidden;
+			}
+
+			ul li {
+				/*position: relative;
+				top: 0px;*/
+				/*height: 80px;*/
+				list-style-type: none;
+				/*background: green;*/
+				/*-webkit-transition: all 1s ease;
+				transition: all 1s ease;*/
+			}
+
+			ul h3 {
+				background: #F2F2F2;
+				padding-left: 10px;
+				margin:0 0 10px;
+				font-size: 20px;
+			}
+
+			ul li div {
+				line-height: 180%;
+				height: 0;
+				-webkit-transition: all 1s ease;
+				transition: all 1s ease;
+				opacity: 0;
+			}
+
+			ul li:first-child div {
+				height: 200px;
+				opacity: 1;
+			}
+
+			/*第一个li的hover有两个效果，当hover ul时和hover 第一个li本身时，这样就可以实现运行时的效果*/
+			ul:hover li:first-child div{
+				height: 0;
+				opacity: 0;
+			}
+			ul li:first-child:hover div, ul li:hover div {
+				height: 200px;
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li id="li_1">
+				<h3>寄李儋元锡</h3>
+				<div>
+					去年花里逢君别，今日花开已一年。<br>
+					世事茫茫难自料，春愁黯黯独成眠。
+				</div>
+			</li>
+
+			<li id="li_2">
+				<h3>虞美人</h3>
+				<div>
+					春花秋月何时了，往事知多少。<br>
+					小楼昨夜又东风，故国不堪回首月明中。
+				</div>
+			</li>
+
+			<li id="li_3">
+				<h3>小重山</h3>
+				<div>
+					春花秋月何时了，往事知多少。<br>
+					小楼昨夜又东风，故国不堪回首月明中。
+				</div>
+			</li>
+
+			<li id="li_4">
+				<h3>江城子</h3>
+				<div>
+					春花秋月何时了，往事知多少。<br>
+					小楼昨夜又东风，故国不堪回首月明中。
+				</div>
+			</li>
+		</ul>
+	</body>
+</html>
