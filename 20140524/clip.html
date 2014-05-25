@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>clip 练习</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<style type="text/css">
+			body {
+				padding: 0;
+				margin: 0;
+			}
+
+			img {
+				position: absolute;
+				/*clip 剪裁绝对定位元素(top right bottom left)*/
+				clip: rect(0px 200px 200px 0px);
+			}
+		</style>
+	</head>
+	<body>
+		<img src="C:\Users\Johnson\Pictures\Camera Roll\c4141ad3a2371b240c9116519ed942a6.jpg" width="1340" height="560">
+		<script type="text/javascript">
+			$(function(){
+				$("img").mousemove(function(e){
+					/*e.pageX 获取鼠标的x轴位置*/
+					var pageX = e.pageX - 100;
+					var pageY = e.pageY - 100;
+					var top = pageY + 200;
+					var left = pageX + 200;
+					$("img").css("clip","rect(" + pageY + "px " + left + "px " + top + "px " + pageX + "px)");
+				})
+			});
+		</script>
+	</body>
+</html>

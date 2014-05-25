@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<!-- meta 元素定义页面有关的元信息。属性有content, http-equiv, name, scheme.
+	http-equiv 属性指示服务器向浏览器发送文档前，先在要MIME文档头部包含meta元素中的名称/值对 -->
+	<meta http-equiv="Content-type" charset="utf-8"/>
+	<title>box-reflect 倒影练习</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			-webkit-box-reflect: below 1px -webkit-gradient(linear,0 20%, 0 100%, from(transparent),color-stop(0,transparent),to(#000));
+		}
+
+		h2 {
+			margin-top:100px;
+			-webkit-box-reflect: above;
+		}
+	</style>
+	<body>
+		<h1>有倒影的文字段一</h1>
+		<h2>有倒影的文字段二</h2>
+	</body>
+</html>
+
