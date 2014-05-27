@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>table</title>
+	</head>
+	<body>
+		<table border="15">
+			<caption>表格标题</caption>
+			<!-- th 表格的表头，作用是什么？每一列代表的含义 -->
+			<tr>
+				<th>Name</th>
+				<th>Sex</th>
+				<th>Career</th>
+			</tr>
+			
+			<!-- tr 表格的一行 -->
+			<tr>
+				<!-- td(table data) 某一行中的一个单元格，用来放数据，可以是文字、图像等 -->
+				<td>第一列</td>
+				<td>第二列</td>
+				<td>第三列</td>
+			</tr>
+			<tr>
+				<td>第一列</td>
+				<td>第二列</td>
+				<td></td>
+				<td>第四列</td>
+				<!-- 不间断空格（non-breaking space）
+						HTML 中的常用字符实体是不间断空格(&nbsp;)。
+						浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，在显示该页面之前，浏览器会删除它们中的 9 个。如需在页面中增加空格的数量，您需要使用 &nbsp; 字符实体。 -->
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+		</table>
+		<br><br>
+
+		<table border="1">
+			<caption>含有其他元素的表格</caption>
+			<tr>
+				<td>含有表格的单元格
+					<table border="1">
+						<tr>
+							<td>i</td>
+							<td>i</td>
+						</tr>
+						<tr>
+							<td>i</td>
+							<td>i</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					包含列表的单元格
+					<ul type="circle">
+						<li>banana</li>
+						<li>orange</li>
+						<li>apple</li>
+					</ul>
+				</td>
+				<td>
+					<p>段落一</p>
+					<p>段落二</p>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">NO.1</td>
+				<td colspan="2">占多列的单元格</td>
+				<td>NO.3</td>
+			</tr>
+
+		</table>
+	</body>
+</html>

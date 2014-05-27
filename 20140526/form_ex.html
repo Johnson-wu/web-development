@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>表单练习</title>
+		<body>
+			<form>
+				<fieldset name="basic information">
+					<legend>Basic Information</legend>
+					姓	名：<input type="text" name="name"/>
+					年	龄：<input type="text" name="age"/>
+					<input type="submit" value="submit" name="submit">
+					<input type="reset" value="reset" name="reset">
+				</fieldset>
+
+				<fieldset>
+					<legend>单选按钮 radio</legend>
+					<!-- 其中的name属性是用来将多个radio配对的，name相同的radio只能选择其中一个 -->
+					男：<input type="radio" name="sex" value="male" checked="check">
+					女：<input type="radio" name="sex" value="female">
+				</fieldset>
+
+				<fieldset>
+					<legend>复选按钮 checkbox</legend>
+					骑车：<input type="checkbox" name="ride bicycle" value="bicycle">
+					跑步：<input type="checkbox" name="run" value="run">
+				</fieldset>
+
+				<fieldset>
+					<legend>下拉框 select option</legend>
+					<select>
+						<option value="England">England</option>
+						<option value="America">America</option>
+						<option value="Itali">Itali</option>
+					</select>
+				</fieldset>
+			</form>
+
+			<!-- action : MAILTO:xxx@suffix 表单发送邮件 -->
+			<form action="MAILTO:wujingjingjing@163.com" method="post">
+				Mail From : <input type="text" size="20">
+				Subject : <input type="text" size="50">
+				<input type="submit" value="submit">
+				<input type="reset" value="reset">
+			</form>
+		</body>
+	</head>
+</html>
