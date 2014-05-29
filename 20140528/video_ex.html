@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>播放视频文件</title>
+	</head>
+	<body>
+		<h2>使用embed元素</h2>
+		<embed src="test.mp4" height="300" width="500"/>
+
+		<h2>使用object元素</h2>
+		<object data="test.mp4" height="300" width="500"></object>
+
+		<h2>使用html5新标签video,同播放音频时一样，最下面的embed没有效果</h2>
+		<video width="500" height="300" controls="controls">
+			<source src="test.mp4" type="video/mp4"/>
+			<source src="test.mp4" type="video/mp3"/>
+			<source src="test.mp4" type="video/wav"/>
+			<object data="test.mp4" width="500" height="300">
+				<embed src="test.mp4"/>
+			</object>
+		</video>
+
+		<h2>使用超链接，browser会调用“辅助应用程序”</h2>
+		<a href="test.mp4">播放视频</a>
+
+		<h2>利用第三方网站，比如：优酷,先将视频传到优酷，然后再视频链接插入自己网站的html代码</h2>
+		<embed src="http://www.***.com" type="application/x-shockwave-flash"/>
+	</body>
+
+</html>
