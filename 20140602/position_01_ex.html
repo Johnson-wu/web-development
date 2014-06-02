@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>css 定位</title>
+		<link rel="stylesheet" type="text/css" href="0602.css">
+	</head>
+	<body>
+		<img src="cxy.jpg">
+		<h2 id="h2_01">正常默认的位置标题</h2>
+		<h2 id="h2_02">标题相对正常位置向右偏移120px</h2>
+		<h2 id="h2_03">绝对定位的标题，坐标left:200px,top:120px</h2>
+		<h2 id="h2_04">固定定位的标题fixed,也是一种absolute，但是是相对于视窗，而不是父元素</h2>
+
+		<div>
+			<!-- 这个时候图片和标题都是默认位置，二者都可以正常显示，不会相互覆盖 -->
+			<img src="cxy.jpg"/>
+			<h2>正常默认的位置标题</h2>
+		</div>
+
+		<h2>下面图片position设置为absolute时，标题将部分被覆盖。因为absolute时，元素框从文档流完全删除，之前所占的位置也被清空，并相对于其父元素重新定位，所以img和标题其实都重新定位了，都认为自己是头一个元素，并且img元素超出了Div的容量范围</h2>
+		<div>
+			<!-- 当给图片position设置为absolute时，标题将部分被覆盖。因为absolute时，元素框从文档流完全删除，之前所占的位置也被清空，并相对于其父元素重新定位，所以img和标题其实都重新定位了，都认为自己是头一个元素，并且img元素超出了Div的容量范围 -->
+			<img src="cxy.jpg" class="img_absolute">
+			<h2>正常默认的位置标题</h2>
+		</div>
+
+		<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+		<h2>对图像进行clip,但是要注意前提是被裁剪的图像必须为absolute position</h2>
+		<div>
+			<img src="cxy.jpg" class="img_clip"/>
+		</div>
+	</body>
+</html>

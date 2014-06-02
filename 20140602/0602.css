@@ -1,0 +1,27 @@
+#h2_02 {
+	position: relative;
+	left: 120px;
+}
+
+#h2_03 {
+	position: absolute;
+	left: 200px;
+	top: 120px;
+}
+
+#h2_04 {
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+}
+
+img.img_absolute {
+	position: absolute;
+	left: 50px;
+}
+
+img.img_clip {
+	position: absolute;
+	/*clip rect()中的四个参数是当对于什么定位的？图像本身吗？为什么剪不出图像？*/
+	clip: rect(0px,10px,200px,90px);
+}
