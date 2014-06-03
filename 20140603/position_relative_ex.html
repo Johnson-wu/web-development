@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>相对定位</title>
+		<h1>
+			<pre>
+对框二进行相对定位。可以看到相对定位后框二被覆盖框三的一部分。
+因为相对定位的偏移量是相对于该元素原来所在的位置起始点(这点之前理解为相对于父元素是错误的)，
+但是偏移后元素之前所在区域仍然被其占用(这点和absolute是不同的),所以框三不会自动占据原来框二所在区域。
+故框二会覆盖框三。
+			</pre>
+		</h1>
+		<style type="text/css">
+			div {
+				display: inline-block;
+				border: 5px solid green;
+				width: 150px;
+				height: 100px;
+			}
+
+			div.div02 {
+				position: relative;
+				left: 50px;
+				top: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			框一
+		</div>
+		<div class="div02">
+			框二
+		</div>
+		<div>
+			框三
+		</div>
+	</body>
+</html>

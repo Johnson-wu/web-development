@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>绝对定位</title>
+		<h1>
+			<pre>
+注：绝对定位的元素的位置相对于最近的已定位祖先元素，如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块。
+对框二进行绝对定位。框二将被从文档流中彻底删除，之前所占区域也被释放。
+从而新的文档流会对框一和框三进行重新排列，这样框三就移到了之前框二所在的位置。
+而测试结果来看，body标签并不能代表框二的祖先元素，所以框二的偏移就相对于最初包含的块（即视窗）
+但是网上看的最初包含的块为body,那么head和body是如何定位的。框二怎么到h1给覆盖了
+			</pre>
+		</h1>
+		<style type="text/css">
+			div {
+				display: inline-block;
+				border: 5px solid green;
+				width: 150px;
+				height: 100px;
+			}
+
+			div.div02 {
+				position: absolute;
+				left: 50px;
+				top: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			框一
+		</div>
+		
+		<div class="div02">
+			框二
+		</div>
+		
+		<div>
+			框三
+		</div>
+	</body>
+</html>
