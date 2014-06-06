@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>利用js前端排序</title>
+		<script src="http://suiyidian.cn/texiao/tab/jquery-1.5.2.min.js"></script>
+		<style type="text/css">
+			.main {
+				width: 500;
+				height: auto;
+				overflow: hidden;
+				background-color: #666666;
+				border: 0;
+				margin: 0px auto;
+			}
+
+			.main tr th, .main tr td{
+				text-align: center;
+				height: 28px;
+				width: 100px;
+				line-height: 28px;
+				font-size: 14px;
+				color: black;
+			}
+
+			.main tr th {
+				cursor: pointer;
+				color: orange;
+			}
+
+			.none {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<table class="main" cellspacing="1">
+			<tr>
+				<th>姓	名</th>
+				<th>年	龄</th>
+				<th>出生年月</th>
+				<th>成	绩</th>
+			</tr>
+
+			<tr>
+				<td>王一</td>
+				<td>32</td>
+				<td>1980</td>
+				<td>98</td>
+			</tr>
+
+			<tr>
+				<td>王二</td>
+				<td>30</td>
+				<td>1983</td>
+				<td>100</td>
+			</tr>
+
+			<tr>
+				<td>王三</td>
+				<td>28</td>
+				<td>1976</td>
+				<td>88</td>
+			</tr>
+
+			<tr>
+				<td>王四</td>
+				<td>25</td>
+				<td>1999</td>
+				<td>50</td>
+			</tr>
+		</table>
+
+		<div class="none"></div>
+	</body>
+</html>

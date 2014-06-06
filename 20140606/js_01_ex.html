@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>利用js前端排序</title>
+		<script src="http://suiyidian.cn/texiao/tab/jquery-1.5.2.min.js"></script>
+		<style type="text/css">
+			.main {
+				width: 500;
+				height: auto;
+				overflow: hidden;
+				background-color: #666666;
+				border: 0;
+				margin: 0px auto;
+			}
+
+			.main tr th, .main tr td{
+				text-align: center;
+				height: 28px;
+				width: 100px;
+				line-height: 28px;
+				font-size: 14px;
+				color: black;
+			}
+
+			.main tr th {
+				cursor: pointer;
+				color: orange;
+			}
+
+			.none {
+				display: none;
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(function(){
+				var pk = "asc";
+				$(".main tr th").click(function(){
+					//jQuery方法：index() 返回指定元素相对于其他指定元素的 index 位置。
+					var tIndex = parseInt($(this).index());
+					var valueArray = new Array();
+					var p = 0;
+
+					/*取出要排序的字段下面的所有值*/
+					//$("table tr").length 返回所有符合条件的元素集合
+					for(var i=1; i<$("table tr").length; i++){
+						/*jQuery选择器 :eq() 选择器选取带有指定 index 值的元素。
+						.eq(index) 方法将匹配元素集缩减值指定 index 上的一个。即遍历元素集，并返回匹配index的元素*/
+						var content = $("table tr:eq("+i+") td").eq(tIndex).html();	//依次取出所选字段下的值
+						/*alert(content)*/
+						if(tIndex != 0){
+							/*转换为int有必要，位数相同比较没有问题，如果不同就会有问题*/
+							valueArray[p] = parseInt(content);
+						}else{
+							//姓名列不需要将字串转换
+							valueArray[p] = content;
+						}
+						p++;
+					}
+
+					/*排序,pk做为是升序还是降序的标识*/
+					if(pk == "asc"){
+						//降序
+						valueArray.sort(function(a,b){
+							return a < b ? -1:1
+						})
+						pk = "dsec"
+					}else{
+						valueArray.sort(function(a,b){
+							return a > b ? -1:1
+						})
+						pk = "asc"
+					}
+
+					/*alert(valueArray)*/
+
+					//根据排序结果要到匹配的行，然后克隆到.none中
+					for(var i=0; i<valueArray.length; i++){
+						for(var d=1; d<$("table tr").length; d++){
+							var content = $("table tr:eq("+d+") td").eq(tIndex).html();
+							var value = (tIndex!=0) ? parseInt(content):content;
+							if(value == valueArray[i]){
+								$("table tr").eq(d).clone().appendTo(".none");
+							}
+						}
+					}
+
+					/*重组table*/
+					//var titleClone = $("table tr").eq(0).clone();	//若仅仅这样只是clone了，表头内容，但是相关的事件没有被克隆，所以第二次点击排序时就没有效果
+					var titleClone = $("table tr").eq(0).clone(true);
+					/*先清空table，再依次重新添加行*/
+					$("table").html("").append(titleClone);
+					$("table").append($(".none").html());
+					$(".none").html("");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<table class="main" cellspacing="1">
+			<tr>
+				<th>姓	名</th>
+				<th>年	龄</th>
+				<th>出生年月</th>
+				<th>成	绩</th>
+			</tr>
+
+			<tr>
+				<td>王一</td>
+				<td>32</td>
+				<td>1980</td>
+				<td>98</td>
+			</tr>
+
+			<tr>
+				<td>王二</td>
+				<td>30</td>
+				<td>1983</td>
+				<td>100</td>
+			</tr>
+
+			<tr>
+				<td>王三</td>
+				<td>28</td>
+				<td>1976</td>
+				<td>88</td>
+			</tr>
+
+			<tr>
+				<td>王四</td>
+				<td>25</td>
+				<td>1999</td>
+				<td>50</td>
+			</tr>
+		</table>
+
+		<div class="none"></div>
+	</body>
+</html>
